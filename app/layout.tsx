@@ -4,12 +4,18 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { TranslationProvider } from "@/lib/translation-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "PM Internship Scheme - Empowering Youth",
-  description: "A 12-month paid internship with top companies across India. Apply now for the PM Internship Scheme.",
+  title: "InternSetu - Ministry of Corporate Affairs | Government of India",
+  description: "InternSetu - Official PM Internship Scheme portal by Ministry of Corporate Affairs, Government of India. 12-month paid internships with top companies across India.",
   generator: "v0.app",
+  icons: {
+    icon: "/Icons/logo.ico",
+    shortcut: "/favicon.ico",
+    apple: "/Icons/logo.ico",
+  },
 }
 
 export default function RootLayout({
@@ -19,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head />
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>{children}</Suspense>
+        <TranslationProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+        </TranslationProvider>
         <Analytics />
       </body>
     </html>

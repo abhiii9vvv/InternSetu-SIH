@@ -66,7 +66,7 @@ export function TestimonialsSection() {
 
                 <div className="flex items-center gap-3">
                   <Image
-                    src={testimonial.image || "/placeholder.svg"}
+                    src={testimonial.image || "https://picsum.photos/seed/internsetu-testimonial/100/100"}
                     alt={testimonial.name}
                     width={50}
                     height={50}
